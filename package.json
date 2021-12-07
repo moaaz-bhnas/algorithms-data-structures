@@ -1,0 +1,25 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moaaz-bhnas/algorithms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moaaz-bhnas/algorithms/issues"
+  },
+  "homepage": "https://github.com/moaaz-bhnas/algorithms#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.14",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  }
+}
