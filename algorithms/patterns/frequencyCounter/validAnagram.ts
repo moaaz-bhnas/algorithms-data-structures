@@ -36,9 +36,10 @@ function validAnagram(string1: string, string2: string): boolean {
   return true;
 }
 
-// console.log(validAnagram("use", "sue")); // true
-// console.log(validAnagram("use", "usa")); // false
-// console.log(validAnagram("use", "")); // false
+console.log("validAnagram");
+console.log(validAnagram("use", "sue")); // true
+console.log(validAnagram("use", "usa")); // false
+console.log(validAnagram("use", "")); // false
 
 function validAnagramBySubtraction(string1: string, string2: string): boolean {
   // check lengths equality
@@ -60,6 +61,7 @@ function validAnagramBySubtraction(string1: string, string2: string): boolean {
   return true;
 }
 
+console.log("validAnagramBySubtraction");
 console.log(validAnagramBySubtraction("use", "sue")); // true
 console.log(validAnagramBySubtraction("use", "usa")); // false
 console.log(validAnagramBySubtraction("use", "")); // false
