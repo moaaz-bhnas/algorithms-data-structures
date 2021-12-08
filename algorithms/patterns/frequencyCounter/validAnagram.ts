@@ -4,7 +4,7 @@ interface FrequencyCounter {
   [key: string]: number;
 }
 
-function buildFrequencyCounter(string: string): FrequencyCounter {
+export function buildFrequencyCounter(string: string): FrequencyCounter {
   const frequencyCounter: FrequencyCounter = {};
 
   for (const letter of string) {
