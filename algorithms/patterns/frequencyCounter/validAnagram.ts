@@ -4,12 +4,12 @@ interface FrequencyCounter {
   [key: string]: number;
 }
 
-export function buildFrequencyCounter(string: string): FrequencyCounter {
+export function buildFrequencyCounter(data: string | any[]): FrequencyCounter {
   const frequencyCounter: FrequencyCounter = {};
 
-  for (const letter of string) {
-    frequencyCounter[letter] = frequencyCounter[letter]
-      ? frequencyCounter[letter] + 1
+  for (const element of data) {
+    frequencyCounter[element] = frequencyCounter[element]
+      ? frequencyCounter[element] + 1
       : 1;
   }
 
