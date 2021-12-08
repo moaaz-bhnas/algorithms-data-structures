@@ -1,7 +1,9 @@
 import { buildFrequencyCounter } from "../frequencyCounter/validAnagram";
 
-function areThereDuplicates(...array: any[]): boolean {
+function areThereDuplicates_multiplePointers(...array: any[]): boolean {
   // array: [1, 2, 3]
+  array.sort();
+
   let i = 0;
 
   for (let j = 1; j < array.length; j++) {
@@ -15,11 +17,11 @@ function areThereDuplicates(...array: any[]): boolean {
   return false;
 }
 
-console.log("areThereDuplicates (with multiple pointers)");
-console.log(areThereDuplicates(1, 2, 3)); // false
-console.log(areThereDuplicates(1, 2, 2)); // true
-console.log(areThereDuplicates("a", "b", "c")); // false
-console.log(areThereDuplicates("a", "b", "b")); // true
+console.log("areThereDuplicates_multiplePointers");
+console.log(areThereDuplicates_multiplePointers(1, 2, 3)); // false
+console.log(areThereDuplicates_multiplePointers(1, 2, 2)); // true
+console.log(areThereDuplicates_multiplePointers("a", "b", "c", "a")); // true
+console.log(areThereDuplicates_multiplePointers("a", "b", "b")); // true
 
 function areThereDuplicates_frequencyCounter(...array: any[]): boolean {
   // example: array = [1, 2, 2, 3]
@@ -40,5 +42,15 @@ function areThereDuplicates_frequencyCounter(...array: any[]): boolean {
 console.log("areThereDuplicates_frequencyCounter");
 console.log(areThereDuplicates_frequencyCounter(1, 2, 3)); // false
 console.log(areThereDuplicates_frequencyCounter(1, 2, 2)); // true
-console.log(areThereDuplicates_frequencyCounter("a", "b", "c")); // false
+console.log(areThereDuplicates_frequencyCounter("a", "b", "c", "a")); // true
 console.log(areThereDuplicates_frequencyCounter("a", "b", "b")); // true
+
+function areThereDuplicates_set(...array: any[]): boolean {
+  return new Set(array).size !== array.length;
+}
+
+console.log("areThereDuplicates_set");
+console.log(areThereDuplicates_set(1, 2, 3)); // false
+console.log(areThereDuplicates_set(1, 2, 2)); // true
+console.log(areThereDuplicates_set("a", "b", "c", "a")); // true
+console.log(areThereDuplicates_set("a", "b", "b")); // true
