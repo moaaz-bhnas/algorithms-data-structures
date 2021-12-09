@@ -17,6 +17,7 @@ function isSubsequent(string1: string, string2: string): boolean {
 //  "moaaz", "member: moaaz ahmed"
 //                        j
 
+console.log("isSubsequent");
 console.log(isSubsequent("moaaz", "moaaz ahmed")); // true
 console.log(isSubsequent("abc", "atgbokc")); // true
 console.log(isSubsequent("abc", "acb")); // false
