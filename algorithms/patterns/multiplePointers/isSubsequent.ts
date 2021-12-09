@@ -5,7 +5,8 @@ function isSubsequent(string1: string, string2: string): boolean {
   for (let j = 0; j < string2.length; j++) {
     // if: string2[j] === string1[i] ? if: i === last index? return true : i++
     if (string2[j] === string1[i]) {
-      if (i === string1.length - 1) return true;
+      const lastIndexOfString1 = i === string1.length - 1;
+      if (lastIndexOfString1) return true;
       else i++;
     }
   }
