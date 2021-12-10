@@ -22,3 +22,20 @@ console.log("isSubsequent");
 console.log(isSubsequent("moaaz", "moaaz ahmed")); // true
 console.log(isSubsequent("abc", "atgbokc")); // true
 console.log(isSubsequent("abc", "acb")); // false
+
+function isSubsequent_recursive(string1: string, string2: string): boolean {
+  if (string1.length === 0) return true;
+  if (string2.length === 0) return false;
+  if (string1[0] === string2[0])
+    return isSubsequent_recursive(string1.slice(1), string2.slice(1));
+  else return isSubsequent_recursive(string1.slice(0), string2.slice(1));
+}
+
+//       i
+//  "moaaz", "member: moaaz ahmed" => "", " ahmed"
+//                        j
+
+console.log("isSubsequent_recursive");
+console.log(isSubsequent_recursive("moaaz", "moaaz ahmed")); // true
+console.log(isSubsequent_recursive("abc", "atgbokc")); // true
+console.log(isSubsequent_recursive("abc", "acb")); // false
