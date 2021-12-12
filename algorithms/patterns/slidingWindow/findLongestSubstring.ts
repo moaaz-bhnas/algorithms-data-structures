@@ -19,13 +19,10 @@ function findLongestSubstring(string: string): number {
       if (currentLength > maxLength) maxLength = currentLength;
       // i = indexer[char] + 1
       i = indexer[character] + 1;
-      // indexer[char] = j
-      indexer[character] = j;
     }
-    // else
-    else {
-      indexer[character] = j;
-    }
+
+    // indexer[char] = j
+    indexer[character] = j;
     // j++
     j++;
   }
