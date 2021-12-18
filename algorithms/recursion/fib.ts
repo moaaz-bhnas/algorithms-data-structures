@@ -1,5 +1,3 @@
-// 1, 1, 2, 3, 5, 8, 13
-
 // create a recursion helper method
 // define an empty array
 
@@ -24,6 +22,8 @@ function helper(nth: number): number {
 }
 
 console.log(helper(4)); // 3
+
+// 1, 1, 2, 3, 5, 8, 13
 
 /*
 fib(0, 4)
