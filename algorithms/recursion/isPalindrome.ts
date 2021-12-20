@@ -1,13 +1,11 @@
 function isPalindrome(string: string): boolean {
-  const { length } = string;
-
-  if (string[0] !== string[length - 1]) return false;
-
   // base case
-  if (length === 0 || length === 1) return true;
+  if (string.length === 0 || string.length === 1) return true;
+
+  if (string[0] !== string.slice(-1)) return false;
 
   // different input
-  return isPalindrome(string.slice(1, string.length - 1));
+  return isPalindrome(string.slice(1, -1));
 }
 
 console.log(isPalindrome("dad")); // true
