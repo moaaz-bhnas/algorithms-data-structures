@@ -1,15 +1,15 @@
-function flattenPure(array: any[]): any[] {
+function flattenPure(oldArray: any[]): any[] {
   let newArray: any[] = [];
 
-  if (array.length === 0) return [];
+  if (oldArray.length === 0) return [];
 
-  if (Array.isArray(array[0])) {
-    return flattenPure(array[0]).concat(flattenPure(array.slice(1)));
+  if (Array.isArray(oldArray[0])) {
+    return flattenPure(oldArray[0]).concat(flattenPure(oldArray.slice(1)));
   } else {
-    newArray.push(array[0]);
+    newArray.push(oldArray[0]);
   }
 
-  newArray = newArray.concat(flattenPure(array.slice(1)));
+  newArray = newArray.concat(flattenPure(oldArray.slice(1)));
   return newArray;
 }
 
