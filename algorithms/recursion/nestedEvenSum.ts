@@ -1,4 +1,4 @@
-function isEven(number: number): boolean {
+export function isEven(number: number): boolean {
   return number % 2 === 0;
 }
 
@@ -40,4 +40,4 @@ const object1 = {
   c: 6,
 };
 
-console.log(nestedEvenSum(object1)); // 6
+console.log(nestedEvenSum(object1)); // 12
