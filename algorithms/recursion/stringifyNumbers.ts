@@ -3,20 +3,19 @@ interface ObjectType {
 }
 
 function stringifyNumbers(object: ObjectType): ObjectType {
-  for (const key in object) {
-    const value = object[key];
+  const newObject = Object.assign({}, object);
 
-    switch (typeof value) {
-      case "number":
-        object[key] = value.toString();
-        break;
-      case "object":
-        stringifyNumbers(value);
-        break;
+  for (const key in object) {
+    const value = newObject[key];
+
+    if (typeof value === "number") {
+      newObject[key] = value.toString();
+    } else if (typeof value === "object" && !Array.isArray(value)) {
+      newObject[key] = stringifyNumbers(value);
     }
   }
 
-  return object;
+  return newObject;
 }
 
 const object1 = {
@@ -26,4 +25,17 @@ const object1 = {
   },
 };
 
+const object2: ObjectType = {
+  num: 1,
+  test: [],
+  data: {
+    val: 4,
+    info: {
+      isRight: true,
+      random: 66,
+    },
+  },
+};
+
 console.log(stringifyNumbers(object1)); // { a: "1", b: { c: "2" } }
+console.log(stringifyNumbers(object2));
