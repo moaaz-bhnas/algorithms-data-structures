@@ -25,17 +25,4 @@ const object1 = {
   },
 };
 
-const object2: ObjectType = {
-  num: 1,
-  test: [],
-  data: {
-    val: 4,
-    info: {
-      isRight: true,
-      random: 66,
-    },
-  },
-};
-
 console.log(stringifyNumbers(object1)); // { a: "1", b: { c: "2" } }
-console.log(stringifyNumbers(object2));
