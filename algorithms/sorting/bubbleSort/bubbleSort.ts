@@ -30,6 +30,7 @@ function swap(
 function bubbleSort(array: (string | number)[]): (string | number)[] {
   // loop through array
   for (let i = 1; i < array.length; i++) {
+    // started from i:1 cause i dont want to reach to lastEle > undefined (i = count iterations)
     let noSwaps = true;
     for (let j = 0; j < array.length - i; j++) {
       console.log("i: ", i, "j: ", j);
