@@ -4,7 +4,7 @@ Bubble Sort:
 
 Implementation:
 - outer loop that starts from 2nd element (i = 1) that's responsible of inserting the element (array[i]) at its right place.
-- nested loop that only continues if current element is larger than its previous (need to be sorted) which at each iteration gives (as long as the condition matches) gives the element (array[i]) space for its right position.
+- nested loop that only continues if current element is less than its previous (need to be sorted) which at each iteration (as long as the condition matches) gives the element (array[i]) space for its right position.
 
 Big O:
 - O(n^2): u r comparing each element to the whole rest of the array
