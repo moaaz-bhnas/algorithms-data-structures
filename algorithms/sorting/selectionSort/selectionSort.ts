@@ -1,5 +1,3 @@
-import { swap } from "../bubbleSort/bubbleSort";
-
 /* 
 Bubble Sort:
 - Smallest values back up to the start.
@@ -20,6 +18,8 @@ Selection vs Bubble:
 - "bubble sort operates by repeatedly swapping the adjacent elements if they are in the wrong order while the selection sort sorts an array by repeatedly finding the minimum element from the unsorted part and placing that at the beginning of the array." - https://pediaa.com/
 - Selection sort is more effecient and faster (due to the many swaps I think).
 */
+
+import swap from "../bubbleSort/swap";
 
 function selectionSort(array: (number | string)[]): (number | string)[] {
   // loop through the whole array

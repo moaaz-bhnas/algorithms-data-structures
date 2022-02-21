@@ -17,15 +17,7 @@ Big O:
 - As it requires only one iteration to realize that there are no swaps.
 */
 
-export function swap(
-  array: (string | number)[],
-  index1: number,
-  index2: number
-): void {
-  const temporary = array[index1];
-  array[index1] = array[index2];
-  array[index2] = temporary;
-}
+import swap from "./swap";
 
 function bubbleSort(array: (string | number)[]): (string | number)[] {
   // loop through array
