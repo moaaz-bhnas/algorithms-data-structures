@@ -3,5 +3,5 @@ export default function getDigit(number: number, index: number): number {
   return Math.floor((Math.abs(number) / Math.pow(10, index)) % 10);
 }
 
-console.log(getDigit(1234, 0)); // 4
-console.log(getDigit(1234, 1)); // 3
+// console.log(getDigit(1234, 0)); // 4
+// console.log(getDigit(1234, 1)); // 3
