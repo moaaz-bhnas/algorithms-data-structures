@@ -37,10 +37,11 @@ class SinglyLinkedList {
     if (!this.head) return undefined;
     // Loop through the list until u reach the tail
     let current = this.head;
-    let temp = this.head;
+    let temp = current;
     while (current.next) {
-      current = current.next;
+      // Make sure temp is always lagging by one node behind
       temp = current;
+      current = current.next;
     }
     // Set the 2nd to last item to be tail
     this.tail = temp;
@@ -56,6 +57,23 @@ class SinglyLinkedList {
     // Return the removed item
     return current;
   }
+
+  shift() {
+    // If the list is empty, return undefined
+    if (!this.head) return undefined;
+    // Store the current head in a variable
+    const oldHead = this.head;
+    // Set the head to be the current head's next
+    this.head = oldHead.next;
+    // Decrement the length by 1
+    this.length--;
+    // If there's only one node, set the tail too to be null
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    // Return the node removed
+    return oldHead;
+  }
 }
 
 const list = new SinglyLinkedList();
@@ -65,5 +83,5 @@ list.push("Zoldyck");
 console.log({ list });
 
 list.pop();
-list.pop();
+list.shift();
 console.log({ list });
