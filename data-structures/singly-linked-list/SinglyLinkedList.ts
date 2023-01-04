@@ -74,11 +74,30 @@ class SinglyLinkedList {
     // Return the node removed
     return oldHead;
   }
+
+  unshift(value: any) {
+    // create new node with the passed value
+    const node = new ListNode(value);
+    // Set both head and tail to be the newly-created node if the list is empty
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+    }
+    // otherwise set the head to the new node, and set new node's next property to the old head
+    else {
+      node.next = this.head;
+      this.head = node;
+    }
+    // increment the length by 1
+    this.length++;
+    // return the list
+    return this;
+  }
 }
 
 const list = new SinglyLinkedList();
 
-list.push("Killua");
+list.unshift("Killua");
 list.push("Zoldyck");
 console.log({ list });
 
