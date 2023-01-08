@@ -19,7 +19,7 @@ class SinglyLinkedList {
     this.length = 0;
   }
 
-  push(value: any) {
+  push(value: any): SinglyLinkedList {
     const node = new ListNode(value);
     if (!this.tail) {
       this.head = node;
@@ -32,7 +32,7 @@ class SinglyLinkedList {
     return this;
   }
 
-  pop() {
+  pop(): ListNode | undefined {
     // If the list is empty, return undefined
     if (!this.head) return undefined;
     // Loop through the list until u reach the tail
@@ -58,7 +58,7 @@ class SinglyLinkedList {
     return current;
   }
 
-  shift() {
+  shift(): ListNode | undefined {
     // If the list is empty, return undefined
     if (!this.head) return undefined;
     // Store the current head in a variable
@@ -75,7 +75,7 @@ class SinglyLinkedList {
     return oldHead;
   }
 
-  unshift(value: any) {
+  unshift(value: any): SinglyLinkedList {
     // create new node with the passed value
     const node = new ListNode(value);
     // Set both head and tail to be the newly-created node if the list is empty
@@ -93,6 +93,17 @@ class SinglyLinkedList {
     // return the list
     return this;
   }
+
+  get(index: number): ListNode | undefined {
+    // If the array is empty or the index is equal or larger than length, return undefined
+    if (!this.head || index >= this.length) return undefined;
+    // Otherwise, loop through the list till reaching the node at the index wanted
+    let currentNode = this.head;
+    for (let i = 0; i < index; i++) {
+      if (currentNode.next) currentNode = currentNode.next;
+    }
+    return currentNode;
+  }
 }
 
 const list = new SinglyLinkedList();
@@ -104,3 +115,7 @@ console.log({ list });
 list.pop();
 list.shift();
 console.log({ list });
+
+list.unshift("Maha");
+list.push("Zoldyck");
+console.log(list.get(1));
