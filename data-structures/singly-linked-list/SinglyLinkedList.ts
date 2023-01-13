@@ -96,13 +96,47 @@ class SinglyLinkedList {
 
   get(index: number): ListNode | undefined {
     // If the array is empty or the index is equal or larger than length, return undefined
-    if (!this.head || index >= this.length) return undefined;
+    // !this.head only for ts
+    if (index < 0 || index >= this.length || !this.head) return undefined;
     // Otherwise, loop through the list till reaching the node at the index wanted
     let currentNode = this.head;
     for (let i = 0; i < index; i++) {
       if (currentNode.next) currentNode = currentNode.next;
     }
     return currentNode;
+  }
+
+  set(index: number, value: any): boolean {
+    // get the node at the specified index
+    const nodeToChange = this.get(index);
+    // if it's undefined, return false
+    if (!nodeToChange) return false;
+    // Otherwise, set its value to the passed one and return true
+    nodeToChange.value = value;
+    return true;
+  }
+
+  insert(index: number, value: any): boolean {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) {
+      this.push(value);
+      return true;
+    }
+    if (index === 0) {
+      this.unshift(value);
+      return true;
+    }
+    // otherwise, create a new node
+    // and set the new node's next to the found node's next, and set the found node's next to the new node
+    const newNode = new ListNode(value);
+    const prev = this.get(index - 1);
+    if (prev && prev.next) {
+      // just for ts
+      newNode.next = prev.next;
+      prev.next = newNode;
+    }
+    this.length++;
+    return true;
   }
 }
 
@@ -118,4 +152,8 @@ console.log({ list });
 
 list.unshift("Maha");
 list.push("Zoldyck");
-console.log(list.get(1));
+console.log(list.get(-1));
+
+list.set(0, "Illumi");
+list.insert(2, "family");
+console.log(list);
