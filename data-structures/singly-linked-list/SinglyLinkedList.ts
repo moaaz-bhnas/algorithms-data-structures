@@ -138,6 +138,21 @@ class SinglyLinkedList {
     this.length++;
     return true;
   }
+
+  remove(index: number): boolean {
+    if (index < 0 || index >= this.length) return false;
+    if (index === this.length - 1) this.pop();
+    else if (index === 0) this.shift();
+    else {
+      // get the node before specified index
+      const previousNode = this.get(index - 1);
+      // set its next to its next's next
+      if (previousNode?.next) previousNode.next = previousNode.next.next; // condition for ts
+      // decrease length by 1
+      this.length--;
+    }
+    return true;
+  }
 }
 
 const list = new SinglyLinkedList();
@@ -156,4 +171,7 @@ console.log(list.get(-1));
 
 list.set(0, "Illumi");
 list.insert(2, "family");
+console.log(list);
+
+list.remove(2);
 console.log(list);
