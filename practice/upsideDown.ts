@@ -5,6 +5,7 @@ function hasNonRotatableInteger(number: number): boolean {
   return regex.test(String(number));
 }
 
+// https://stackoverflow.com/a/51146322/7982963
 function reverseNumber(number: number): number {
   let reversed = 0;
 
@@ -16,7 +17,7 @@ function reverseNumber(number: number): number {
   return reversed;
 }
 
-// Use the rplacer function: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+// https://stackoverflow.com/a/48571621/7982963
 function swap6And9(number: number): number {
   return Number(
     String(number).replace(/[69]/g, ($1) => ($1 === "6" ? "9" : "6"))
@@ -25,7 +26,6 @@ function swap6And9(number: number): number {
 
 // Create a function that takes two arguments
 function upsideDown(start: string, end: string): number {
-  // const nonRotatables = [2, 3, 4, ..]
   let count = 0;
   for (
     let currentNumber = Number(start);
