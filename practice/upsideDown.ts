@@ -39,14 +39,16 @@ function upsideDown(start: string, end: string): number {
       currentNumber !== 8
     )
       continue;
+    // Now we have 0, 1, 8, and all numbers > 10
 
     if (hasNonRotatableInteger(currentNumber)) continue;
+    // Now we have 0, 1, 8, and all numbers > 10 that don't include non-rotatable integers (e.g. 12, 23, 840, etc.)
 
-    // reverse numbers
+    // reverse number
     let reversedNumber = reverseNumber(currentNumber);
-    // reverse 6 and 9
+    // swap 6 and 9
     reversedNumber = swap6And9(reversedNumber);
-
+    // Check if the number is upside down
     if (currentNumber !== reversedNumber) continue;
 
     console.log(currentNumber);
