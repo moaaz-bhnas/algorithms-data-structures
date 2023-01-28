@@ -5,30 +5,22 @@ function hasNonRotatableInteger(number: number): boolean {
   return regex.test(String(number));
 }
 
-function has6or9(number: number): boolean {
-  const regex = new RegExp("6|9");
-  return regex.test(String(number));
-}
+function reverseNumber(number: number): number {
+  let reversed = 0;
 
-function isPalindrome(number: number): boolean {
-  const string = String(number);
-
-  for (let i = 0; i < string.length; i++) {
-    const left = string[i];
-    const right = string[string.length - 1 - i];
-    // console.log({ left, right });
-    if (left === "6") {
-      if (right === "9") continue;
-      else return false;
-    }
-    if (left === "9") {
-      if (right === "6") continue;
-      else return false;
-    }
-    if (left !== right) return false;
+  while (number > 0) {
+    reversed = reversed * 10 + (number % 10);
+    number = Math.floor(number / 10);
   }
 
-  return true;
+  return reversed;
+}
+
+// Use the rplacer function: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+function swap6And9(number: number): number {
+  return Number(
+    String(number).replace(/[69]/g, ($1) => ($1 === "6" ? "9" : "6"))
+  );
 }
 
 // Create a function that takes two arguments
@@ -40,27 +32,30 @@ function upsideDown(start: string, end: string): number {
     currentNumber <= Number(end);
     currentNumber++
   ) {
+    if (
+      currentNumber < 10 &&
+      currentNumber !== 0 &&
+      currentNumber !== 1 &&
+      currentNumber !== 8
+    )
+      continue;
+
     if (hasNonRotatableInteger(currentNumber)) continue;
 
-    if (String(currentNumber).length === 1) {
-      if (!has6or9(currentNumber)) {
-        console.log({ currentNumber });
-        count++;
-      }
-      continue;
-    }
+    // reverse numbers
+    let reversedNumber = reverseNumber(currentNumber);
+    // reverse 6 and 9
+    reversedNumber = swap6And9(reversedNumber);
 
-    // Create a function to check 6 or 9
-    // Create a function that checks if palindrome
-    if (isPalindrome(currentNumber)) {
-      console.log({ currentNumber });
-      count++;
-    }
+    if (currentNumber !== reversedNumber) continue;
+
+    console.log(currentNumber);
+    count++;
   }
   return count;
 }
 
-// console.log(upsideDown("0", "12")); // => 4, the valid numbers are: 0, 1, 8, 11
-console.log(upsideDown("100000", "12345678900000000"));
+console.log(upsideDown("0", "12")); // => 4, the valid numbers are: 0, 1, 8, 11
+// console.log(upsideDown("100000", "12345678900000000"));
 
-// console.log(isPalindrome(689));
+// console.log(reverseNumber(6889));
