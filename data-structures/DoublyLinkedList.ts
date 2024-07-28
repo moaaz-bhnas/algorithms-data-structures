@@ -74,6 +74,33 @@ export default class DoublyLinkedList {
       }
     }
   }
+
+  shift() {
+    switch (this.length) {
+      // If the list is empty, return undefined
+      case 0: {
+        return undefined;
+      }
+      // If only 1 element, head & tail = null
+      case 1: {
+        var temp = this.head;
+        this.head = null;
+        this.tail = null;
+        this.length--;
+        return temp;
+      }
+      default: {
+        // else, get 2nd to last element
+        // set its prev to null
+        // Set head to it
+        var temp = this.head; // to be returened later
+        this.head = this.head.prev;
+        this.tail.next = null;
+        this.length--;
+        return temp;
+      }
+    }
+  }
 }
 
 var list = new DoublyLinkedList();
