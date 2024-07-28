@@ -127,6 +127,104 @@ export default class DoublyLinkedList {
       }
     }
   }
+
+  get(index: number) {
+    // return undefined if the list is empty
+    if (this.length == 0) {
+      return undefined;
+    }
+
+    // Check whether u should start from the head / tail
+    var fromHead = index <= this.length / 2;
+
+    // create a result variant that starts with head
+    var node;
+
+    if (fromHead) {
+      node = this.head;
+      // Start a loop that stops when the counter reaches index
+      for (let i = 0; i < index; i++) {
+        // assign result to node.next
+        node = node.next;
+      }
+    } else {
+      node = this.tail;
+      for (let i = this.length - 1; i > index; i--) {
+        // assign result to node.next
+        node = node.next;
+      }
+    }
+    return node;
+  }
+
+  set(index: number, value: any) {
+    var node = this.get(index);
+    if (node) {
+      node.value = value;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  // 1, 2, 4
+  insert(index: number, value: any) {
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+
+    if (index == 0) {
+      this.unshift(value);
+      return true;
+    }
+
+    if (index == this.length) {
+      this.push(value);
+      return true;
+    }
+
+    // create a new node with the value
+    var newNode = new ListNode(value);
+    // get node at that index
+    var nodeAtIndex = this.get(index);
+    // get node at index + 1
+    var nodeBefore = this.get(index - 1);
+
+    // set node1's next to new node
+    nodeAtIndex.prev = newNode;
+    // set node2's prev to new node
+    nodeBefore.next = newNode;
+    // set new node's next and prev
+    newNode.next = nodeAtIndex;
+    newNode.prev = nodeBefore;
+    this.length++;
+    return true;
+  }
+
+  remove(index: number) {
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+
+    if (index == 0) {
+      this.shift();
+      return true;
+    }
+
+    if (index == this.length - 1) {
+      this.pop();
+      return true;
+    }
+
+    // get node after and set its prev to its prev's prev
+    var nodeAfter = this.get(index + 1);
+    nodeAfter.prev = nodeAfter.prev.prev;
+    // get node before and set its next to it's next's next
+    var nodeBefore = this.get(index - 1);
+    nodeBefore.next = nodeBefore.next.next;
+    this.length--;
+    return true;
+  }
 }
 
 var list = new DoublyLinkedList();
@@ -135,15 +233,19 @@ list.push("Harry");
 list.push("Potter");
 list.push("Ron");
 list.push("Weasly");
-console.log("after push", list);
+// console.log("after push", list);
 
-list.pop();
-list.pop();
-console.log("after pop", list);
+// list.remove(4);
+list.remove(3);
+console.log(list);
 
-list.shift();
-list.shift();
-console.log("after shift", list);
+// list.pop();
+// list.pop();
+// console.log("after pop", list);
+
+// list.shift();
+// list.shift();
+// console.log("after shift", list);
 
 /** Big O
  * Insertion O(1):
