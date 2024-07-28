@@ -248,9 +248,7 @@ console.log(list);
 // console.log("after shift", list);
 
 /** Big O
- * Insertion O(1):
- * all you do in push / unshift is that u assign head / tail
- * so SLL win over array here
+ * Insertion O(1)
  * Removal O(1):
  * Searching O(n)
  * Access O(n)
