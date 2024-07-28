@@ -94,10 +94,36 @@ export default class DoublyLinkedList {
         // set its prev to null
         // Set head to it
         var temp = this.head; // to be returened later
-        this.head = this.head.prev;
-        this.tail.next = null;
+        this.head = this.head.next;
+        this.head.prev = null;
         this.length--;
         return temp;
+      }
+    }
+  }
+
+  /**
+   * 2, 3
+   */
+  unshift(value: any) {
+    var node = new ListNode(value);
+    switch (this.length) {
+      // If the list is empty, return undefined
+      case 0: {
+        this.head = node;
+        this.tail = node;
+        return this;
+      }
+
+      default: {
+        // Link current head's prev to new node
+        this.head.prev = node;
+        // Link new node's next to current head
+        node.next = this.head;
+        // Make new node the head
+        this.head = node;
+
+        return this;
       }
     }
   }
@@ -107,11 +133,17 @@ var list = new DoublyLinkedList();
 
 list.push("Harry");
 list.push("Potter");
+list.push("Ron");
+list.push("Weasly");
 console.log("after push", list);
 
 list.pop();
 list.pop();
 console.log("after pop", list);
+
+list.shift();
+list.shift();
+console.log("after shift", list);
 
 /** Big O
  * Insertion O(1):
