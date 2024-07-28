@@ -19,7 +19,7 @@
     "listFiles": false,
     "noEmitHelpers": true
   },
-  "include": ["algorithms/**/*"],
+  "include": ["**/*.ts"],
   "exclude": ["node_modules"],
   "compileOnSave": false
 }

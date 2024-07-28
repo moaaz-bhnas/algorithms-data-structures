@@ -1,3 +1,8 @@
+/**
+ * A list of nodes with no indexes that just point to the next element
+ * No random access. If you want to access an element, u start from the beginning
+ */
+
 class ListNode {
   value: any;
   next: ListNode | null;
@@ -8,7 +13,7 @@ class ListNode {
   }
 }
 
-class SinglyLinkedList {
+export default class SinglyLinkedList {
   head: ListNode | null;
   tail: ListNode | null;
   length: number;
@@ -175,3 +180,19 @@ console.log(list);
 
 list.remove(2);
 console.log(list);
+
+/** Big O
+ * Insertion O(1):
+ * all you do in push / unshift is that u assign head / tail
+ * so SLL win over array here
+ * Removal O(n):
+ * Depends on the position of the element (could be at the end)
+ * Searching O(n)
+ * Access O(n):
+ * Win here for the array where you can access with index directly
+ */
+
+/** Recap
+ * Good alternative to array if you need to frequently insert/remove from the beginning
+ * It lays the foundation for other data structures Stacks / Queues
+ */
