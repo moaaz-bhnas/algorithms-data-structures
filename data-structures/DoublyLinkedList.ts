@@ -59,6 +59,7 @@ export default class DoublyLinkedList {
         var temp = this.head;
         this.head = null;
         this.length = null;
+        this.length--;
         return temp;
       }
       default: {
@@ -68,12 +69,10 @@ export default class DoublyLinkedList {
         var temp = this.tail;
         this.tail = temp.prev;
         this.tail.next = null;
+        this.length--;
         return temp;
       }
     }
-
-    // decrement length
-    this.length--;
   }
 }
 
@@ -81,11 +80,12 @@ var list = new DoublyLinkedList();
 
 list.push("Harry");
 list.push("Potter");
-console.log(list);
+console.log("after push", list);
 
 list.pop();
+console.log("after pop", list);
 list.pop();
-console.log(list);
+console.log("after pop", list);
 
 /** Big O
  * Insertion O(1):
