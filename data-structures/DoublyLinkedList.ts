@@ -58,7 +58,7 @@ export default class DoublyLinkedList {
       case 1: {
         var temp = this.head;
         this.head = null;
-        this.length = null;
+        this.tail = null;
         this.length--;
         return temp;
       }
@@ -83,7 +83,6 @@ list.push("Potter");
 console.log("after push", list);
 
 list.pop();
-console.log("after pop", list);
 list.pop();
 console.log("after pop", list);
 
