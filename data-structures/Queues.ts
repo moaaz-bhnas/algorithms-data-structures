@@ -22,10 +22,10 @@ export class Queue {
   last: QueueNode;
   size: number;
 
-  constructor() {
-    this.first = null;
+  constructor(value?: any) {
+    this.first = value ? new QueueNode(value) : null;
     this.last = null;
-    this.size = 0;
+    this.size = value ? 1 : 0;
   }
 
   enqueue(value: any) {
