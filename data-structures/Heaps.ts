@@ -54,13 +54,13 @@ export default class MaxBinaryHeap {
     this.values.push(value);
     // 2. Bubble up
 
-    // get the index of both the parent and the child to be able to swap them
+    // get the index of both the parent and the child to be able to swapIdx them
     var valueIdx = this.values.length - 1;
     while (valueIdx > 0) {
       var parentIdx = Math.floor((valueIdx - 1) / 2);
       // compare parent to the child
       var parent = this.values[parentIdx];
-      // if value > parent, swap them
+      // if value > parent, swapIdx them
       if (value > parent) {
         this.values[parentIdx] = value;
         this.values[valueIdx] = parent;
@@ -97,61 +97,98 @@ export default class MaxBinaryHeap {
    *           20
    *       19       18
    *    17   16  12   14
-   * 1. Swap the root with most recent number, and then remove the recent
+   * 1. swapIdx the root with most recent number, and then remove the recent
    *           14
    *       19       18
    *    17   16  12
    * 2. Compare left / right children with the parent (14)
    * - if both are smaller or don't exist, you are done
-   * - if one of them is greater, swap it with the parent, then repeat
-   * - if both are greater, swap with the greatest
+   * - if one of them is greater, swapIdx it with the parent, then repeat
+   * - if both are greater, swapIdx with the greatest
    */
   extractMax() {
     var root = this.values[0];
-    // 1. swap
+    // 1. swapIdx
     this.values[0] = this.values[this.values.length - 1];
     this.values.pop();
 
-    var currentIdx = 0;
     // 2. bubble down
+    this.bubbleDown();
+    return root;
+  }
 
-    while (currentIdx < this.values.length - 2) {
+  bubbleDown() {
+    var currentIdx = 0;
+
+    while (currentIdx < this.values.length - 1) {
       var leftIdx = 2 * currentIdx + 1;
       var rightIdx = 2 * currentIdx + 2;
       var current = this.values[currentIdx];
       var left = this.values[leftIdx];
       var right = this.values[rightIdx];
-      if (current < left && current < right) {
-        if (left > right) {
-          this.values[currentIdx] = left;
-          this.values[leftIdx] = current;
-          currentIdx = leftIdx;
-        } else {
-          this.values[currentIdx] = right;
-          this.values[rightIdx] = current;
-          currentIdx = rightIdx;
-        }
-      } else if (current < left) {
-        this.values[currentIdx] = left;
-        this.values[leftIdx] = current;
-        currentIdx = leftIdx;
-      } else if (current < right) {
-        this.values[currentIdx] = right;
-        this.values[rightIdx] = current;
-        currentIdx = rightIdx;
+      var swapIdx = NaN;
+
+      if (left && left > current) {
+        swapIdx = leftIdx;
+      }
+
+      if (
+        (right && swapIdx && right > this.values[swapIdx]) ||
+        (right && !swapIdx && right > current)
+      ) {
+        swapIdx = rightIdx;
+      }
+
+      if (swapIdx) {
+        this.values[currentIdx] = this.values[swapIdx];
+        this.values[swapIdx] = current;
+        currentIdx = swapIdx;
       } else {
-        return root;
+        break;
       }
     }
   }
 }
 
-var heap = new MaxBinaryHeap([41, 39, 33, 18, 27, 12]);
-heap.extractMax();
+var heap = new MaxBinaryHeap([41, 39, 33, 18, 12, 27]);
+// heap.extractMax();
 
 console.log("🔺", heap);
+console.log(heap.extractMax(), heap);
+console.log(heap.extractMax(), heap);
+console.log(heap.extractMax(), heap);
+console.log(heap.extractMax(), heap);
+console.log(heap.extractMax(), heap);
+console.log(heap.extractMax(), heap);
+console.log(heap.extractMax(), heap);
+console.log(heap.extractMax(), heap);
 // 41, 39, 33, 18, 27, 12, 55
 // 0   1   2   3   4   5   6
 
 // 41, 39, 55, 18, 27, 12, 33
 // 0   1   2   3   4   5   6
+
+// 41, 39, 33, 18, 12, 27
+// 0   1   2   3   4   5
+
+/**
+ *               41
+ *       39              33
+ * 18          12     27
+ *
+ */
+
+/** Time complexity log(N)
+ * If you have a max binary heap with 5 levels (32 nodes), and were to insert a new node that's bigger than the root (the worst case)
+ * you will need to do 5 comparisons to move it to the top
+ * As n grows to 32, 2 to what power gives you 32? 5. That's what log(n) means
+ * Insertion / removal log(n)
+ * searching O(n) "it's not usually used for search, maybe use BST"
+ *
+ * Unlike binary trees' worst case
+ * 1
+ *   2
+ *     3
+ *       4
+ * This can't happen in a binary heap due to the rule that u have to fill the left first
+ */
