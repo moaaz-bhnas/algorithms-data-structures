@@ -27,8 +27,7 @@ import { Queue } from "./Queues";
  * and break only inside for, while, etc.
  * by a tree structure (https://en.wikipedia.org/wiki/Abstract_syntax_tree)
  * حاجات تانية مش فاهمها
- * Maybe chess engines?
- * If I make a certain move, I go into a different branch
+ * Maybe chess engines? (not true, after learning about graphs, it's graphs)
  */
 
 /** Kinds of trees
@@ -48,7 +47,7 @@ import { Queue } from "./Queues";
  * - they are sorted in a particualr way
  * - used to store comparable data (mainly numbers)
  * - every node to the left of a parent is always less than the parent
- * - every node to the roght is grater that the parent
+ * - every node to the right is grater that the parent
  * - this makes it much easier to search
  */
 
@@ -241,10 +240,10 @@ console.log("➡️", tree.BFS());
 console.log("⬇️", tree.DFSInOrder());
 
 /** Big O of BST
- * Inserting log(2)
+ * Inserting log(n)
  * Searching log(n)
  * 🐉 How?
- * If you double the nodes, you get on more iteration
+ * If you double the nodes, you get one more iteration
  *   10
  * 8    12
  * Searching for 12 here is 2 iterations
@@ -310,7 +309,7 @@ console.log("⬇️", tree.DFSInOrder());
  * 1
  *   2
  *     3
- * BFS's queue will store one node at a time, so it's better as DBS has a new call stack for each level
+ * BFS's queue will store one node at a time, so it's better as DFS has a new call stack for each level
  */
 
 /** DFS variants

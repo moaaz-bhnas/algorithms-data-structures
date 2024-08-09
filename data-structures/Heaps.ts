@@ -96,7 +96,7 @@ export default class MaxBinaryHeap {
    * Removes the root and assigns a new one by bubbling down
    *           20
    *       19       18
-   *    17   16  12   14
+   *    17   16   12   14
    * 1. swapIdx the root with most recent number, and then remove the recent
    *           14
    *       19       18

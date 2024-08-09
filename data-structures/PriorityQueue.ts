@@ -28,7 +28,7 @@
  *     🤕      🥴
  * 🤒
  *
- * Now the bed is ready, so the first on gets served (extracted out)
+ * Now the bed is ready, so the first one gets served (extracted out)
  *     🤕
  * 🤒      🥴
  *
