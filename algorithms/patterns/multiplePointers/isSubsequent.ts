@@ -1,3 +1,21 @@
+/*
+PROBLEM: Is Subsequence
+
+Write a function called `isSubsequent` which takes in two strings and checks
+whether the characters in the first string form a subsequence of the second
+string. The characters in the first string must appear in the second string in
+their original order, but not necessarily consecutively.
+
+  isSubsequent("moaaz", "moaaz ahmed")  // true
+  isSubsequent("abc", "atgbokc")        // true
+  isSubsequent("abc", "acb")            // false
+
+Constraints:
+- Time complexity goal: O(n + m)
+- Space complexity goal: O(1)
+- Bonus: can you solve it recursively?
+*/
+
 function isSubsequent(string1: string, string2: string): boolean {
   // create 2 pointers: one (i) for string1, and the other (j) for string2
   let i = 0;

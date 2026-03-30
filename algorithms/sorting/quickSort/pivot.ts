@@ -1,3 +1,18 @@
+/*
+PROBLEM: Pivot Helper
+
+Write a helper function called `pivot` which accepts an array, a start index, and
+an end index. It should designate the element at `start` as the pivot, rearrange
+elements in the subarray so that all values less than the pivot come before it and
+all values greater come after it, then return the final index of the pivot.
+
+  pivot([3, 4, 2, 5, 1], 0, 5)  // returns 2, array rearranged to [1, 2, 3, ?, ?]
+
+Constraints:
+- Must operate in-place (no new array)
+- The pivot's final position is what matters; the order of elements around it doesn't need to be sorted
+*/
+
 import swap from "../bubbleSort/swap";
 
 export default function pivot(

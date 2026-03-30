@@ -1,3 +1,13 @@
+/*
+PROBLEM: Nested Even Sum
+
+Write a recursive function called `nestedEvenSum` which returns the sum of all
+even numbers in an object, including even numbers in deeply nested objects.
+
+  nestedEvenSum({ a: 1, b: { a: 2, b: 3, c: 4 }, c: 6 })  // 12
+  nestedEvenSum({ a: 2, b: { b: 2 }, c: { c: { c: 2 } } }) // 6
+*/
+
 export function isEven(number: number): boolean {
   return number % 2 === 0;
 }

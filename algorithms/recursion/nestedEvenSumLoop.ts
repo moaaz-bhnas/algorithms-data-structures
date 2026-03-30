@@ -1,3 +1,13 @@
+/*
+PROBLEM: Nested Even Sum (Loop-based)
+
+Write a recursive function called `nestedEvenSumLoop` which returns the sum of
+all even numbers in an object, including even numbers in deeply nested objects.
+This time, use a for...in loop instead of manually splitting the object.
+
+  nestedEvenSumLoop({ a: 1, b: { a: 2, b: 3, c: 4 }, c: 6 })  // 12
+*/
+
 import { isEven } from "./nestedEvenSum";
 
 function nestedEvenSumLoop(object: { [key: string]: any }): number {

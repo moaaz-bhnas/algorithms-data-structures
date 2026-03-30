@@ -1,3 +1,18 @@
+/*
+PROBLEM: Radix Sort
+
+Implement a function called `radixSort` which accepts an array of non-negative
+integers and returns it sorted in ascending order using the radix sort algorithm.
+Radix sort works by sorting numbers digit-by-digit (ones, then tens, then hundreds…)
+using buckets (0–9), without ever comparing two numbers directly.
+
+  radixSort([2, 90, 65, 2560, 16, 7])  // [2, 7, 16, 65, 90, 2560]
+
+Constraints:
+- Time complexity: O(n * k) where k = number of digits in the largest number
+- You'll need the `getDigit` and `getMostDigits` helpers
+*/
+
 // Just watch: https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/8344146#overview
 
 import getDigit from "./getDigit";

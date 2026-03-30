@@ -1,3 +1,18 @@
+/*
+PROBLEM: Insertion Sort
+
+Implement a function called `insertionSort` which accepts an array and returns it
+sorted in ascending order. Build the sorted portion of the array one element at a
+time by inserting each new element into its correct position.
+
+  insertionSort([4, 2, 3, 1])  // [1, 2, 3, 4]
+  insertionSort([5, 1, 4, 2])  // [1, 2, 4, 5]
+
+Constraints:
+- Time complexity (average/worst): O(n²)
+- Advantage: efficient for nearly-sorted data and for online sorting (receiving live data)
+*/
+
 /* 
 Bubble Sort:
 - insertion sort is a sorting algorithm that places an unsorted element at its suitable place in each iteration - https://www.programiz.com/dsa/insertion-sort

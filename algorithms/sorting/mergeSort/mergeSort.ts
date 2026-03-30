@@ -1,3 +1,17 @@
+/*
+PROBLEM: Merge Sort
+
+Implement a function called `mergeSort` which accepts an array of numbers and
+returns it sorted in ascending order using the merge sort algorithm.
+Use the `merge` helper function from `./merge`.
+
+  mergeSort([4, 3, 2, 1])             // [1, 2, 3, 4]
+  mergeSort([8, 7, 6, 5, 4, 3, 2, 1]) // [1, 2, 3, 4, 5, 6, 7, 8]
+
+Constraints:
+- Time complexity (best/average/worst): O(n log n)
+*/
+
 /* 
 Merge Sort:
 

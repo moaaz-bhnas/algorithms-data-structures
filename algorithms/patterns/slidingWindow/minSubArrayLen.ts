@@ -1,3 +1,20 @@
+/*
+PROBLEM: Minimum Sub Array Length
+
+Write a function called `minSubArrayLen` which accepts two parameters — an array
+of positive integers and a positive integer `sum`. The function should return the
+minimal length of a contiguous subarray whose sum is greater than or equal to `sum`.
+If there is none, return 0.
+
+  minSubArrayLen([4, 1, 3, 2, 4], 6)  // 2
+  minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 39)  // 3
+  minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 55)  // 5
+
+Constraints:
+- Time complexity goal: O(n)
+- Space complexity goal: O(1)
+*/
+
 function getSum(numbers: number[]): number {
   return numbers.reduce((prev, curr) => prev + curr, 0);
 }

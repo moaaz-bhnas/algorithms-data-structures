@@ -1,3 +1,18 @@
+/*
+PROBLEM: Find Longest Substring
+
+Write a function called `findLongestSubstring` which accepts a string and returns
+the length of the longest substring that contains only unique (non-repeating) characters.
+
+  findLongestSubstring("tokyorevengers")  // 6
+  findLongestSubstring("longestsubstring") // 7
+  findLongestSubstring("thisishowwedoit") // 5
+  findLongestSubstring("aaaaaa")           // 1
+
+Constraints:
+- Time complexity goal: O(n)
+*/
+
 // try again
 function findLongestSubstring(string: string): number {
   // create a variable to hold the maximumLength

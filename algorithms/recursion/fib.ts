@@ -1,3 +1,17 @@
+/*
+PROBLEM: Fibonacci
+
+Write a recursive function called `fib` which accepts a number `n` and returns
+the nth number in the Fibonacci sequence. The Fibonacci sequence starts with
+1, 1, 2, 3, 5, 8, 13, ... where each number is the sum of the two preceding ones.
+
+  fib(1)   // 1
+  fib(2)   // 1
+  fib(4)   // 3
+  fib(7)   // 13
+  fib(10)  // 55
+*/
+
 // create a recursion helper method
 // define an empty array
 

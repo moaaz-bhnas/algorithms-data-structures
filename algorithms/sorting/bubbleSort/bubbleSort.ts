@@ -1,3 +1,17 @@
+/*
+PROBLEM: Bubble Sort
+
+Implement a function called `bubbleSort` which accepts an array and returns it
+sorted in ascending order. You may only swap adjacent elements.
+
+  bubbleSort([4, 2, 3, 1])         // [1, 2, 3, 4]
+  bubbleSort([2, 1, 3, 4, 5, 6])   // [1, 2, 3, 4, 5, 6]
+
+Constraints:
+- Time complexity (average/worst): O(n²)
+- Time complexity (best — already sorted): O(n)
+*/
+
 /* 
 Bubble Sort:
 - Largest values bubble up to the top.

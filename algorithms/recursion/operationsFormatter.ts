@@ -1,3 +1,14 @@
+/*
+PROBLEM: Prefix Expression Calculator
+
+Write a function called `calculate` that evaluates a mathematical expression
+written in prefix notation (operator comes before its operands). Each operand
+can itself be a nested prefix expression. Supported operators: +, -, *, /, %.
+
+  calculate("+ * 1 2 3")   // 5  → (1 * 2) + 3
+  calculate("+ 2 * 2 4")   // 10 → 2 + (2 * 4)
+*/
+
 export function calculate(expression: string): number {
   expression = expression.replaceAll(" ", "");
   return evaluate(expression);

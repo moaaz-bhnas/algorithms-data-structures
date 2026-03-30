@@ -1,3 +1,18 @@
+/*
+PROBLEM: Count Unique Values
+
+Implement a function called `countUniqueValues` which accepts a sorted array and
+counts the number of unique values in it. The array can contain negative numbers.
+
+  countUniqueValues([-2, 0, 1, 1, 3, 3, 4])  // 5
+  countUniqueValues([])                        // 0
+  countUniqueValues([1, 1, 1, 1, 1, 2])        // 2
+
+Constraints:
+- Time complexity goal: O(n)
+- Space complexity goal: O(1) — do not create a new array
+*/
+
 function countUniqueValues(array: number[]): number {
   if (!array.length) return 0;
 

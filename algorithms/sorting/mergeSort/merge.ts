@@ -1,3 +1,18 @@
+/*
+PROBLEM: Merge Two Sorted Arrays
+
+Write a function called `merge` which accepts two sorted arrays and merges them
+into a single sorted array. Do not sort the result — build it in order as you go.
+
+  merge([1, 3, 7], [2, 4, 6, 9, 10])  // [1, 2, 3, 4, 6, 7, 9, 10]
+  merge([1, 2], [])                    // [1, 2]
+  merge([], [1, 2])                    // [1, 2]
+
+Constraints:
+- Time complexity: O(n + m)
+- Space complexity: O(n + m)
+*/
+
 /* merge
 Time Complexity:
 O(n+m) 

@@ -1,3 +1,19 @@
+/*
+PROBLEM: Max Subarray Sum
+
+Write a function called `maxSubarraySum` which accepts an array of integers and
+a number `n`. The function should calculate the maximum sum of `n` consecutive
+elements in the array. If the array has fewer than `n` elements, return null.
+
+  maxSubarraySum([100, 200, 300, 400], 2)  // 700
+  maxSubarraySum([1, 4, 2, 10, 23, 3, 1, 0, 20], 4)  // 39
+  maxSubarraySum([1, 2], 3)  // null
+
+Constraints:
+- Time complexity goal: O(n)
+- Space complexity goal: O(1)
+*/
+
 function maxSubarraySum(
   numbers: number[],
   subarrayLength: number

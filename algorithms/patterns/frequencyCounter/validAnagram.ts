@@ -1,3 +1,19 @@
+/*
+PROBLEM: Valid Anagram
+
+Given two strings, write a function to determine if the second string is an
+anagram of the first. An anagram is a word formed by rearranging the letters of
+another, using all the original letters exactly once.
+
+  validAnagram("use", "sue")  // true
+  validAnagram("use", "usa")  // false
+  validAnagram("use", "")     // false
+
+Constraints:
+- Assume the input consists only of lowercase letters.
+- Time complexity goal: O(n)
+*/
+
 // type vs interface: https://stackoverflow.com/a/65948871/7982963
 
 interface FrequencyCounter {

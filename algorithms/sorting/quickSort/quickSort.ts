@@ -1,3 +1,18 @@
+/*
+PROBLEM: Quick Sort
+
+Implement a function called `quickSort` which accepts an array and returns it
+sorted in ascending order using the quicksort algorithm. Use the `pivot` helper
+from `./pivot`. Sort in-place.
+
+  quickSort([3, 4, 2, 5, 1])  // [1, 2, 3, 4, 5]
+  quickSort([4, 6, 9, 1, 2])  // [1, 2, 4, 6, 9]
+
+Constraints:
+- Time complexity (best/average): O(n log n)
+- Time complexity (worst): O(n²) — when pivot is always the min or max
+*/
+
 /* 
 Quick Sort:
 

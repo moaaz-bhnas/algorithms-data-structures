@@ -1,3 +1,15 @@
+/*
+PROBLEM: Fibonacci (Pure Recursive)
+
+Write a pure recursive function called `fib` which accepts a number `n` and returns
+the nth number in the Fibonacci sequence (1, 1, 2, 3, 5, 8, 13, ...).
+Unlike a helper mutation approach, use only function parameters — no outer variables.
+
+  fib(1)   // 1
+  fib(4)   // 3
+  fib(10)  // 55
+*/
+
 function fib(nth: number, index: number = 0, sequence: number[] = []): number {
   // base case
   if (nth === 0) return sequence[sequence.length - 1];

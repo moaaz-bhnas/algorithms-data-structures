@@ -1,3 +1,18 @@
+/*
+PROBLEM: Selection Sort
+
+Implement a function called `selectionSort` which accepts an array and returns it
+sorted in ascending order. In each pass, find the minimum element from the unsorted
+portion and place it at the beginning of that portion.
+
+  selectionSort([4, 2, 3, 1])  // [1, 2, 3, 4]
+  selectionSort([5, 3, 1, 4])  // [1, 3, 4, 5]
+
+Constraints:
+- Time complexity (all cases): O(n²)
+- Performs fewer swaps than bubble sort
+*/
+
 /* 
 Bubble Sort:
 - Smallest values back up to the start.

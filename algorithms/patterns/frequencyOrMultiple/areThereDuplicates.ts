@@ -1,3 +1,19 @@
+/*
+PROBLEM: Are There Duplicates?
+
+Implement a function called `areThereDuplicates` which accepts a variable number
+of arguments, and checks whether there are any duplicate values among them.
+
+  areThereDuplicates(1, 2, 3)          // false
+  areThereDuplicates(1, 2, 2)          // true
+  areThereDuplicates("a", "b", "c", "a") // true
+
+Constraints:
+- Time complexity goal: O(n)
+- Space complexity goal: O(n)
+- Bonus: can you solve it with O(n log n) time and O(1) space?
+*/
+
 import { buildFrequencyCounter } from "../frequencyCounter/validAnagram";
 
 function areThereDuplicates_multiplePointers(...array: any[]): boolean {

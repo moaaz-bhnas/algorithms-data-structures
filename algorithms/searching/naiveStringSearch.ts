@@ -1,3 +1,19 @@
+/*
+PROBLEM: Naive String Search
+
+Write a function called `naiveStringSearch` that accepts a larger string and a
+smaller string (substring) and counts the number of times the substring appears
+in the larger string. Do not use built-in string search methods.
+
+  naiveStringSearch("dorodo", "do")          // 2
+  naiveStringSearch("lorie loled", "lol")    // 1
+  naiveStringSearch("wowomgzomg", "omg")     // 2
+  naiveStringSearch("blah", "nope")          // 0
+
+Constraints:
+- Time complexity: O(n * m)
+*/
+
 // with .slice()
 // function naiveStringSearch(string: string, substring: string): number {
 //   let matches = 0;

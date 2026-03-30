@@ -1,3 +1,17 @@
+/*
+PROBLEM: Same Frequency
+
+Given two positive integers, write a function to determine if they have the same
+frequency of digits.
+
+  sameFrequency(123, 321)  // true
+  sameFrequency(123, 322)  // false
+  sameFrequency(123, 32)   // false
+
+Constraints:
+- Time complexity goal: O(n)
+*/
+
 import { buildFrequencyCounter } from "./validAnagram";
 
 function sameFrequency(number1: number, number2: number): boolean {

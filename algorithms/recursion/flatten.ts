@@ -1,3 +1,15 @@
+/*
+PROBLEM: Flatten
+
+Write a recursive function called `flatten` which accepts an array containing
+nested arrays of any depth and returns a new flat array with all values.
+
+  flatten([1, [2, 3]])           // [1, 2, 3]
+  flatten([[1], 2, [3]])         // [1, 2, 3]
+  flatten([1, [[[[2]]]], 3])     // [1, 2, 3]
+  flatten([[1, [2]], [3, [4]]])  // [1, 2, 3, 4]
+*/
+
 function flatten(array: any[]): any[] {
   const newArray: any[] = [];
 
